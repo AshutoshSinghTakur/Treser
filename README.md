@@ -1,2 +1,2 @@
-# Treser
+# Treasure 
 Runner Game
