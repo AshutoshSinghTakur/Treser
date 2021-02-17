@@ -25,21 +25,21 @@ function preload(){
 
 function setup(){
   
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(400,400);
   
 // Moving background
-path=createSprite(width/2,200);
+path=createSprite(200,200);
 path.addImage(pathImg);
 path.velocityY = 4;
 
 
 //creating boy running
-boy = createSprite(width/2,height-20,20,20);
+boy = createSprite(200,380,20,20);
 boy.addAnimation("boyRunning",boyImg);
 boy.addImage(boy2Img);
 boy.scale=0.08;
   
-  end = createSprite(width/2,200,10,10);
+  end = createSprite(200,200,10,10);
   end.scale = 0.5;
   end.addImage(endImg);
   end.visible = false;
@@ -66,7 +66,7 @@ function draw() {
   boy.collide(edges);
   
   if(gameState === PLAY){
-    if(path.y > height){
+    if(path.y > 400){
     path.y = height/2;
    }
     
@@ -111,7 +111,7 @@ function draw() {
   drawSprites();
   textSize(20);
   fill(255);
-  text("Treasure: "+ treasureCollection,width-150,30);
+  text("Treasure: "+ treasureCollection,150,30);
 
 }
 
