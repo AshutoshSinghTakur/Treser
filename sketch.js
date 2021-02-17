@@ -38,11 +38,7 @@ boy = createSprite(200,380,20,20);
 boy.addAnimation("boyRunning",boyImg);
 boy.addImage(boy2Img);
 boy.scale=0.08;
-  
-  end = createSprite(200,200,10,10);
-  end.scale = 0.5;
-  end.addImage(endImg);
-  end.visible = false;
+ 
   
   
   
@@ -97,13 +93,21 @@ function draw() {
   
   if(gameState === END){
     
+    boy.addAnimation("boyRunning",endImg);
+    boy.x = width/2;
+    boy.y = height/2;
+    boy.scale = 0.6;
+    
+    cashG.destroyEach();
+    diamondsG.destroyEach();
+    jwelleryG.destroyEach();
+    swordGroup.destroyEach();
+    
         path.velocityY = 0;
         cashG.setVelocityEach(0);
         diamondsG.setVelocityEach(0);
         jwelleryG.setVelocityEach(0);
         swordGroup.setVelocityEach(0);
-        boy.destroyEach();
-        end.visible = true;
     
     
   }
